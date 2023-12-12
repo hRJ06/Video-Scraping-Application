@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>YouTube Scraper - Details</title>
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video Details</h1>
+        <p>Details have been saved to {{ name }}</p>
+
+        {% if data %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Video Thumbnail</th>
+                        <th>Title</th>
+                        <th>Views</th>
+                        <th>Time of Posting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                        <tr>
+                            <td><img src="{{ row['Video Thumbnail'] }}" alt="Thumbnail"></td>
+                            <td>{{ row['Title'] }}</td>
+                            <td>{{ row['Views'] }}</td>
+                            <td>{{ row['Time of Posting'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No data available.</p>
+        {% endif %}
+
+        <a href="/">Go back to Home</a>
+    </div>
+</body>
+</html>

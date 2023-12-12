@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>YouTube Scraper</title>
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Scraper</h1>
+        <form action="/details" method="post">
+            <label for="content">Enter YouTube Video Section URL:</label>
+            <input type="text" id="content" name="content" required>
+            <button type="submit">Get Details</button>
+        </form>
+    </div>
+</body>
+</html>
